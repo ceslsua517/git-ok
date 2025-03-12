@@ -62,17 +62,34 @@
             background-color: #218838;
             transform: scale(1.2);
         }
+
+        .svg-container {
+            margin: 20px auto;
+            width: 100px;
+            height: 100px;
+        }
+
+        .svg-container svg {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <button class="button" onclick="animateBox()">Haz clic aquí</button>
+        <button class="button" onclick="animateElements()">Haz clic aquí</button>
         <div class="box" id="box"></div>
         <div class="circle" id="circle"></div>
+        <div class="svg-container" id="svg-container">
+            <svg viewBox="0 0 24 24">
+                <polygon points="12,2 15,8 22,9 17,14 18,21 12,18 6,21 7,14 2,9 9,8" fill="#FFD700" />
+            </svg>
+        </div>
     </div>
     <script>
-        function animateBox() {
+        function animateElements() {
             const box = document.getElementById('box');
             box.style.transition = 'transform 0.5s ease';
             box.style.transform = 'rotate(360deg)';
@@ -85,6 +102,12 @@
             circle.style.transform = 'translateY(-50px)';
             setTimeout(() => {
                 circle.style.transform = 'translateY(0)';
+            }, 500);
+
+            const svg = document.querySelector('.svg-container svg');
+            svg.style.transform = 'rotate(360deg)';
+            setTimeout(() => {
+                svg.style.transform = 'rotate(0deg)';
             }, 500);
         }
     </script>
