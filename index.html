@@ -5,144 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interacción y Animaciones</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            position: relative;
-        }
-
-        .hero svg {
-            width: 300px;
-            height: 300px;
-        }
-
-        .hero svg #star {
-            transition: transform 1s ease;
-        }
-
-        .hero:hover svg #star {
-            transform: rotate(360deg);
-        }
-
-        .social-menu {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 20px;
-        }
-
-        .social-menu a {
-            text-decoration: none;
-            color: #007BFF;
-            font-size: 24px;
-            transition: color 0.3s ease;
-        }
-
-        .social-menu a:hover {
-            color: #0056b3;
-        }
-
-        .container {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .button:hover {
-            transform: scale(1.1);
-            background-color: #0056b3;
-        }
-
-        .box {
-            width: 100px;
-            height: 100px;
-            background-color: #007BFF;
-            margin: 20px auto;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .box:hover {
-            background-color: #0056b3;
-            transform: scale(1.2);
-        }
-
-        .circle {
-            width: 100px;
-            height: 100px;
-            background-color: #28a745;
-            border-radius: 50%;
-            margin: 20px auto;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .circle:hover {
-            background-color: #218838;
-            transform: scale(1.2);
-        }
-
-        .svg-container {
-            margin: 20px auto;
-            width: 100px;
-            height: 100px;
-        }
-
-        .svg-container svg {
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease;
-        }
-
-        .parallax {
-            background-image: url('https://via.placeholder.com/1920x1080');
-            height: 500px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .content {
-            padding: 50px 20px;
-            background-color: #f0f0f0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <div class="hero">
+    <header class="hero">
         <svg viewBox="0 0 24 24">
             <polygon id="star" points="12,2 15,8 22,9 17,14 18,21 12,18 6,21 7,14 2,9 9,8" fill="#FFD700" />
         </svg>
-        <div class="social-menu">
+        <nav class="social-menu">
             <a href="https://facebook.com" target="_blank">Facebook</a>
             <a href="https://twitter.com" target="_blank">Twitter</a>
             <a href="https://instagram.com" target="_blank">Instagram</a>
-        </div>
-    </div>
+        </nav>
+    </header>
 
-    <div class="container">
+    <main class="container">
         <button class="button" onclick="animateElements()">Haz clic aquí</button>
         <div class="box" id="box"></div>
         <div class="circle" id="circle"></div>
@@ -151,18 +30,18 @@
                 <polygon points="12,2 15,8 22,9 17,14 18,21 12,18 6,21 7,14 2,9 9,8" fill="#FFD700" />
             </svg>
         </div>
-    </div>
+    </main>
 
-    <div class="parallax"></div>
-    <div class="content">
+    <section class="parallax" style="background-image: url('https://picsum.photos/1920/1080');"></section>
+    <section class="content">
         <h2>Sección de Contenido</h2>
         <p>Esta es una sección de contenido con un efecto parallax en la imagen de fondo.</p>
-    </div>
-    <div class="parallax"></div>
-    <div class="content">
+    </section>
+    <section class="parallax" style="background-image: url('https://source.unsplash.com/random/1920x1080');"></section>
+    <section class="content">
         <h2>Otra Sección de Contenido</h2>
         <p>Esta es otra sección de contenido con un efecto parallax en la imagen de fondo.</p>
-    </div>
+    </section>
 
     <script>
         function animateElements() {
